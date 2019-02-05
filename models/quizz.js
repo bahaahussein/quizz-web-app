@@ -12,7 +12,7 @@ const questionSchema = new Schema({
     },
     answers: {
        type: [String],
-        required: true
+       required: true
     },
     choices: [String]
 });
@@ -36,7 +36,7 @@ quizSchema.statics.isQuestionError = function(question) {
         }
     } else if(question.type === "text") {
         if(question.answers.length > 1) {
-            return new Error("text question must have at least one answer");
+            return new Error("text question must have exactly one answer");
         }
     } else {
         return new Error("question type must be multiple choice or text");

@@ -9,8 +9,8 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const quizzId = req.body.quizzId;
     const question = req.body.question;
-    if(!quizzId) {
-        response.sendErrorResponse(res, 400, "quizz id must be provided");
+    if(!quizzId || !question) {
+        response.sendErrorResponse(res, 400, "quizz id and question must be provided");
         return;
     }
     const err = QuizzModel.isQuestionError(question);
@@ -36,6 +36,7 @@ router.delete('/', (req, res) => {
     const questionId = req.body.questionId;
     if(!quizzId || !questionId) {
         response.sendErrorResponse(res, 400, "quizzId and questionId must be provided");
+        return;
     }
     QuizzModel.update({_id: quizzId},
         {$pull: {questions: {_id: questionId}}}).then(() => {

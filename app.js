@@ -21,6 +21,8 @@ app.use((req, res,) => {
   response.sendErrorResponse(res, 404, "wrong url");
 });
 
-app.listen(port, () => console.log(`app listening on port ${port}!`));
+if(!module.parent) {
+    app.listen(port, () => console.log(`app listening on port ${port}!`));
+}
 
 module.exports = app;

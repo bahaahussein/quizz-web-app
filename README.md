@@ -17,5 +17,5 @@ These instructions will get you a copy of the project up and running on your loc
 ## Predefined token required for the app:
 
 ```
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaGFja2VyIiwiaWF0IjoxNTQ5MTM1NDMyfQ.vQ_nTCles34LRgRGRKmzFn2ns7vW25VN-d3KrboazMs
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaGFja2VyIn0.j2-9VecocC3etiGX_IZ9TFNbNMpY6nTU8DM-q3u2VLQ
 ```

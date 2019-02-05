@@ -1,8 +1,9 @@
 const jwt = require('jsonwebtoken');
 const config = require('./config.js');
-const respone = require('./utils/response')
+const respone = require('./utils/response');
 
-const predefinedToken = jwt.sign({name: 'hacker'}, config.secret);
+const predefinedToken = jwt.sign({name: 'hacker'}, config.secret, {noTimestamp: true});
+
 
 module.exports = (req, res, next) => {
   const reqToken = req.headers['x-fake-token'];

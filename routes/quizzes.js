@@ -31,12 +31,13 @@ router.post('/', authenticate, (req, res) => {
                 return;
             }
         }
+        // check if there is duplicate for the question of the question
+        if(isQuestionDuplicate(questions)) {
+            response.sendErrorResponse(res, 400, "questions must not have duplicates");
+            return;
+        }
     }
-    // check if there is duplicate for the question of the question
-    if(isQuestionDuplicate(questions)) {
-        response.sendErrorResponse(res, 400, "questions must not have duplicates");
-        return;
-    }
+
     const newQuizz = new QuizzModel(body);
     newQuizz.save().then((addedQuizz) => {
         response.sendSuccessResponse(res, {quizz: addedQuizz});
