@@ -14,6 +14,11 @@ These instructions will get you a copy of the project up and running on your loc
 * Open command window in the folder of the project and write : npm install
 * In the same command window write: node app.js
 
+## Running the tests
+
+* Make sure MongoDb is running.
+* Open command window in the folder of the project and write : npm test
+
 ## Predefined token required for the app:
 
 ```

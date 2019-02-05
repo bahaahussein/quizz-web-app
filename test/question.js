@@ -81,7 +81,6 @@ describe('Questions', () => {
                     .set('x-fake-token', token)
                     .send({quizzId: addedQuizz._id, question: newQuestion})
                     .end((err, res) => {
-                        // response.sendErrorResponse(res, 400, "this question is already in database");
                         res.should.have.status(400);
                         res.body.should.be.a('object');
                         res.body.should.have.property('status').eql('fail');
